@@ -41,6 +41,10 @@ MoonRift
 
 Unity
 
+## Game Design Document (GDD)
+
+[View the Game Design Document (GDD)](Ash%20POI%20Game%20Design%20Document.pdf)
+
 ## Download
 
 [Download Ash: Protector of Ignicity](https://mindeveloper.itch.io/ash-protector-of-ignicity)
