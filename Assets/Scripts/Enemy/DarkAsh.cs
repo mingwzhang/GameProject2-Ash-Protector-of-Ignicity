@@ -33,7 +33,7 @@ public class DarkAsh : MonoBehaviour
     private float spikesCD;
     private float spikesAtkTime;
 
-    private bool chasing;
+    private bool isChasing;
 
     private float specialAtkCharge = 0;
     [SerializeField] private Slider chargeSlider;
@@ -82,7 +82,7 @@ public class DarkAsh : MonoBehaviour
         healthBar.SetMaxHealth(maxHealth);
         spikesCD = 1.0f;
         spikesAtkTime = spikesCD;
-        chasing = true;
+        isChasing = true;
     }
 
     // Update is called once per frame
@@ -95,7 +95,7 @@ public class DarkAsh : MonoBehaviour
         Vector3 playerPosition = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
         transform.LookAt(playerPosition);
 
-        if (playerInSightRange & chasing)  ChasePlayer();
+        if (playerInSightRange & isChasing)  ChasePlayer();
         if (steppedOn) DealsDmg();
         if (playerInAttackRange) AttackPlayer();
         chargeSlider.value = specialAtkCharge;
@@ -134,7 +134,7 @@ public class DarkAsh : MonoBehaviour
     }
     private void ChasePlayer()
     {
-        chasing = true;
+        isChasing = true;
         animator.SetBool("isRunning", true);
         agent.SetDestination(player.position);
     }
@@ -258,5 +258,4 @@ public class DarkAsh : MonoBehaviour
             steppedOn = false;
         }
     }
-
 }
